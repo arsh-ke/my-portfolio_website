@@ -1,6 +1,18 @@
 "use client"
 
+import { useState } from "react"
+
 export default function Home() {
+  const [showContactModal, setShowContactModal] = useState(false)
+
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div className="min-h-screen bg-[oklch(0.08_0_0)] text-[oklch(0.95_0_0)]">
       {/* Navigation */}
@@ -16,7 +28,10 @@ export default function Home() {
           >
             Arsh Kureshi
           </div>
-          <button className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 bg-gradient-to-r from-emerald-500 to-cyan-500 text-[oklch(0.08_0_0)] hover:shadow-lg hover:shadow-emerald-500/50">
+          <button 
+            onClick={scrollToContact}
+            className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 bg-gradient-to-r from-emerald-500 to-cyan-500 text-[oklch(0.08_0_0)] hover:shadow-lg hover:shadow-emerald-500/50"
+          >
             Hire Me
           </button>
         </div>
@@ -55,30 +70,35 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[oklch(0.08_0_0)] shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60">
+            <button 
+              onClick={scrollToProjects}
+              className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[oklch(0.08_0_0)] shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60"
+            >
               View My Work
             </button>
-            <button className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-md bg-white/5 border border-white/10 text-[oklch(0.95_0_0)] hover:bg-white/10 hover:border-white/20 hover:shadow-emerald-500/40">
+            <button 
+              onClick={scrollToContact}
+              className="px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 backdrop-blur-md bg-white/5 border border-white/10 text-[oklch(0.95_0_0)] hover:bg-white/10 hover:border-white/20 hover:shadow-emerald-500/40"
+            >
               Hire Me
             </button>
           </div>
 
           <div className="mt-20 flex justify-center">
-  <div className="relative">
-    {/* Glow */}
-    <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+            <div className="relative">
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
 
-    {/* Glass circle frame */}
-    <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-2 rounded-full relative shadow-[0_0_80px_rgba(0,255,170,0.35)]">
-      <img
-        src="/me.png"
-        alt="Arsh Kureshi"
-        className="w-60 h-69 object-cover rounded-full border-4 border-white/10"
-      />
-    </div>
-  </div>
-</div>
-
+              {/* Glass circle frame */}
+              <div className="backdrop-blur-xl bg-white/5 border border-white/10 p-2 rounded-full relative shadow-[0_0_80px_rgba(0,255,170,0.35)]">
+                <img
+                  src="/me.png"
+                  alt="Arsh Kureshi"
+                  className="w-60 h-69 object-cover rounded-full border-4 border-white/10"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -259,7 +279,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2
             style={{
@@ -351,7 +371,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="max-w-4xl mx-auto">
           <h2
             style={{
@@ -364,56 +384,56 @@ export default function Home() {
             Get in Touch
           </h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-lg:grid-cols-4 gap-6">
-  {[
-    {
-      icon: "✉️",
-      label: "Email",
-      value: "kureshimohammadarsh@gmail.com",
-      link: "Kureshimohammadarsh@gmail.com",
-    },
-    {
-      icon: "💼",
-      label: "LinkedIn",
-      value: "linkedin.com/in/arsh",
-      link: "https://www.linkedin.com/in/arsh-kureshi-934895373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    },
-    {
-      icon: "🐙",
-      label: "GitHub",
-      value: "github.com/arsh",
-      link: "https://github.com/arsh-ke",
-    },
-    {
-      icon: "💬",
-      label: "WhatsApp",
-      value: "+91 7862878461",
-      link: "https://wa.me/917862878461",
-    },
-  ].map((contact, index) => (
-    <div
-      key={index}
-      className="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 p-6 rounded-lg text-center group hover:shadow-lg hover:shadow-emerald-500/30"
-    >
-      <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-        {contact.icon}
-      </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: "✉️",
+                label: "Email",
+                value: "kureshimohammadarsh@gmail.com",
+                link: "mailto:Kureshimohammadarsh@gmail.com",
+              },
+              {
+                icon: "💼",
+                label: "LinkedIn",
+                value: "linkedin.com/in/arsh",
+                link: "https://www.linkedin.com/in/arsh-kureshi-934895373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+              },
+              {
+                icon: "🐙",
+                label: "GitHub",
+                value: "github.com/arsh",
+                link: "https://github.com/arsh-ke",
+              },
+              {
+                icon: "💬",
+                label: "WhatsApp",
+                value: "+91 7862878461",
+                link: "https://wa.me/917862878461",
+              },
+            ].map((contact, index) => (
+              <div
+                key={index}
+                className="backdrop-blur-md bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 p-6 rounded-lg text-center group hover:shadow-lg hover:shadow-emerald-500/30"
+              >
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                  {contact.icon}
+                </div>
 
-      <h3 className="text-emerald-400 font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
-        {contact.label}
-      </h3>
+                <h3 className="text-emerald-400 font-semibold mb-2 group-hover:text-cyan-400 transition-colors">
+                  {contact.label}
+                </h3>
 
-      <a
-        href={contact.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[oklch(0.8_0_0)] text-sm group-hover:text-[oklch(0.9_0_0)] transition-colors hover:underline"
-      >
-        {contact.value}
-      </a>
-    </div>
-  ))}
-</div>
+                <a
+                  href={contact.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[oklch(0.8_0_0)] text-sm group-hover:text-[oklch(0.9_0_0)] transition-colors hover:underline"
+                >
+                  {contact.value}
+                </a>
+              </div>
+            ))}
+          </div>
 
           <div className="mt-16 text-center">
             <p className="text-[oklch(0.7_0_0)] text-sm">© 2026 Arsh Kureshi. All rights reserved.</p>
