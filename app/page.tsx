@@ -364,11 +364,12 @@ export default function Home() {
       {/* Screenshots */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
         {[
-          "public/Screenshot 2025-12-06 214238.png",
-          "public/Screenshot 2025-12-06 215705.png",
-          "public/Screenshot 2025-12-06 215745.png",
-          "public/Screenshot 2025-12-06 233711.png",
-        ].map((img, index) => (
+  "/screenshots/dashboard-dark.png",
+  "/screenshots/dashboard-light.png",
+  "/screenshots/analytics.png",
+  "/screenshots/reports.png",
+]
+.map((img, index) => (
           <div
             key={index}
             className="relative overflow-hidden rounded-xl border border-white/10 group"
