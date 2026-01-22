@@ -329,6 +329,107 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Projects Section */}
+<section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-5xl mx-auto">
+    <h2
+      style={{
+        background: "linear-gradient(to right, rgb(52, 211, 153), rgb(34, 197, 226))",
+        backgroundClip: "text",
+        color: "transparent",
+      }}
+      className="text-4xl md:text-5xl font-bold mb-12 text-center"
+    >
+      Projects
+    </h2>
+
+    {/* Project Card */}
+    <div className="backdrop-blur-md bg-white/5 border border-white/10 p-8 md:p-12 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20">
+
+      <h3 className="text-2xl md:text-3xl font-bold text-[oklch(0.95_0_0)] mb-3">
+        Modern Admin Dashboard
+      </h3>
+
+      <div className="inline-block px-3 py-1 bg-emerald-500/20 border border-emerald-400/30 rounded-full mb-6">
+        <span className="text-emerald-400 text-sm font-semibold">
+          Next.js • Shadcn UI • Admin Panel
+        </span>
+      </div>
+
+      <p className="text-[oklch(0.85_0_0)] mb-8 text-lg leading-relaxed">
+        A fully responsive Admin Dashboard built using Next.js, Shadcn UI and Tailwind CSS.
+        Includes analytics charts, project & task management, authentication, and light/dark theme.
+      </p>
+
+      {/* Screenshots */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+        {[
+          "public/Screenshot 2025-12-06 214238.png",
+          "public/Screenshot 2025-12-06 215705.png",
+          "public/Screenshot 2025-12-06 215745.png",
+          "public/Screenshot 2025-12-06 233711.png",
+        ].map((img, index) => (
+          <div
+            key={index}
+            className="relative overflow-hidden rounded-xl border border-white/10 group"
+          >
+            <img
+              src={img}
+              alt="Admin Dashboard Screenshot"
+              className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Features */}
+      <div className="mb-8">
+        <h4 className="text-lg font-semibold text-[oklch(0.85_0_0)] mb-4">
+          Key Features:
+        </h4>
+
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[
+            "Light & Dark Theme",
+            "Analytics & Reports",
+            "Admin Panel Management",
+            "Authentication (Login/Register)",
+            "Project & Task Management",
+            "Responsive UI",
+          ].map((feature, index) => (
+            <li key={index} className="flex items-center gap-2">
+              <span className="text-emerald-400">✔</span>
+              <span className="text-[oklch(0.8_0_0)]">{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4">
+  <a
+  href="https://github.com/arsh-ke/Next-Shadcn"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300 hover:scale-105 bg-gradient-to-r from-emerald-500 to-emerald-600 text-[oklch(0.08_0_0)] shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60"
+>
+  GitHub Repository
+</a>
+
+
+        <a
+          href="#"
+          className="px-6 py-3 rounded-lg font-semibold text-center transition-all duration-300 hover:scale-105 backdrop-blur-md bg-white/5 border border-white/10 text-[oklch(0.95_0_0)] hover:bg-white/10 hover:border-white/20"
+        >
+          Live Demo (Coming Soon)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* Skills Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
